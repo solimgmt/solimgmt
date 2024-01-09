@@ -1,0 +1,32 @@
+<section class="section portfolio no-padding-top">
+    <div class="container">
+        <div class="row">
+            <h2 class="section__title">Soli Elites</h2>
+            <div class="button-group filters-button-group">
+                <button class="button title__grey is-checked" data-filter="*">all</button>
+                <button class="button title__grey" data-filter=".Female">WOMEN</button>
+                <button class="button title__grey" data-filter=".Male">MEN</button>
+                <button class="button title__grey" data-filter=".Them">THEM</button>
+                <button class="button title__grey" data-filter=".NewFace">New Faces</button>
+            </div>
+            <div class="col-md-12">
+                <div class="grid" style="position: relative; height: 2025.91px;">
+                    <div class="grid-sizer"></div>
+                     <div class="grid-gutter"></div>
+                     <a *ngFor="let elite of elites" class="effect-bubba grid-item grid-item__width2" [class]="elite.gender" [attr.data-category]="elite.gender">
+                         <img class="img-responsive" [src]="elite.profile" alt="profile">
+                         <div class="grid-item__contant-info">
+                             <div class="grid-item__contant-name">{{elite.brand}}</div>
+                             <div class="grid-item__contant-place title__grey">{{elite.location}}</div>
+                             <i class="grid-item__contant-arrow mdi mdi-arrow-right"></i>
+                         </div>
+                     </a>
+                    <div class="grid-item grid-item__width2 view__all Female Male Them NewFace" data-category="Them" style="position: absolute; left: 0%; top: 1831px;">
+                        <a routerLink="/model" class="more animation">view all models</a><br>
+                        <a routerLink="/actor" class="more animation">view all actors</a>
+                    </div>
+                </div> <!-- end of grid -->
+            </div>
+        </div>
+    </div>
+</section>

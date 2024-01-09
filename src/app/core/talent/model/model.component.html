@@ -1,0 +1,31 @@
+<soli-sub-header></soli-sub-header>
+<div class="section portfolio">
+    <div class="container">
+        <div class="row">
+            <div class="button-group filters-button-group">
+                <button class="button title__grey is-checked" data-filter="*">all</button>
+                <button class="button title__grey" data-filter=".Female">WOMEN</button>
+                <button class="button title__grey" data-filter=".Male">MEN</button>
+                <button class="button title__grey" data-filter=".Them">THEM</button>
+                <button class="button title__grey" data-filter=".NewFace">New Faces</button>
+            </div>
+
+
+            <div class="col-md-12" >
+                <div class="grid">
+                    <div class="grid-sizer"></div>
+                    <div class="grid-gutter"></div>
+                    <a *ngFor="let model of models" routerLink="{{'/model/'+model.id}}" class="effect-bubba grid-item grid-item__width2" [class]="model.gender" [attr.data-category]="model.gender">
+                        <img class="img-responsive" [src]="model.profile" alt="sample image">
+                        <div class="grid-item__contant-info">
+                            <div class="grid-item__contant-name">{{model.brand}}</div>
+                            <div class="grid-item__contant-place title__grey">{{model.location}}</div>
+                            <i class="grid-item__contant-arrow mdi mdi-arrow-right"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div><!-- Portfolio Section End -->
