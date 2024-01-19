@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ReloadService } from 'src/app/shared/reload/reload.service';
 import { Model } from 'src/app/shared/resources/objects';
 import { DataService } from 'src/app/shared/services/data-service.service';
 import { SubHeaderService } from 'src/app/shared/services/sub-header.service';
@@ -13,11 +14,13 @@ export class ModelComponent implements OnInit {
 
   models : Model[] = []
 
-  constructor(private subHeaderService: SubHeaderService, private dataService: DataService) { }
+  constructor(private subHeaderService: SubHeaderService, private dataService: DataService, private reloadService: ReloadService) { }
 
   ngOnInit(): void {
     this.subHeaderService.setSubHeaderTitle("Soli Models");
     this.models = this.dataService.getModels();
+    this.reloadService.reload();
   }
+  
 
 }

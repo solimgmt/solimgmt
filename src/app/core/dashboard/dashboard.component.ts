@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ReloadService } from 'src/app/shared/reload/reload.service';
 
 @Component({
   selector: 'soli-dashboard',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private reloadService: ReloadService) { }
 
   ngOnInit(): void {
+    this.reloadService.reload()
   }
 
 }
